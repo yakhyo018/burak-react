@@ -36,12 +36,20 @@ export default function PopularDishes() {
                         <Stack
                           flexDirection={"row"}
                           justifyContent={"space-between"}
+                          sx={{ width: "260px" }}
                         >
                           <Typography
                             level="h2"
                             fontSize="lg"
                             textColor="#fff"
                             mb={1}
+                            sx={{
+                              display: "block",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                            noWrap
                           >
                             {ele.productName}
                           </Typography>
@@ -68,11 +76,19 @@ export default function PopularDishes() {
                           px: "var(--Card-padding)",
                           borderTop: "1px solid",
                           height: "60px",
+                          width: "290px",
                         }}
                       >
                         <Typography
                           startDecorator={<DescriptionOutlinedIcon />}
                           textColor="neutral.300"
+                          sx={{
+                            display: "block",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                          }}
+                          noWrap
                         >
                           This is delicious meal
                         </Typography>

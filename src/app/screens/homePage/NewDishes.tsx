@@ -16,6 +16,8 @@ const newDishes = [
 ];
 
 export default function NewDishes() {
+  console.log("newDishes:", newDishes);
+
   return (
     <div className={"new-products-frame"}>
       <Container>
@@ -37,7 +39,17 @@ export default function NewDishes() {
                       <CardOverflow variant="soft" className="product-detail">
                         <Stack className="info">
                           <Stack flexDirection={"row"}>
-                            <Typography className={"title"}>
+                            <Typography
+                              className={"title"}
+                              sx={{
+                                display: "block",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                                marginRight: "10px",
+                              }}
+                              noWrap
+                            >
                               {ele.productName}
                             </Typography>
                             <Divider width="2" height="24" bg="#d9d9d9" />
