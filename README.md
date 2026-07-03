@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux] and [Redux Toolkit] TS template.
+This project was bootstrapped with [Vite](https://vitejs.dev/), using React and TypeScript and the [Redux] and [Redux Toolkit] TS template.
+
+## Getting Started
 
 ## Publishing Rules
 
@@ -24,11 +26,17 @@ Box
 
 In the project directory, you can run:
 
-### `yarn run start`
+Install dependencies:
+
+```bash
+npm install --legacy-peer-deps
+```
+
+### `yarn dev`
 
 Runs the app in the development mode.
 
-### `yarn run build`
+### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
