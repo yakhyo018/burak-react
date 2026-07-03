@@ -42,7 +42,7 @@
     "@types/styled-components": "^5.1.34"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
