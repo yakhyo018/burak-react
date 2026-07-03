@@ -23,6 +23,7 @@ export default function ChosenProduct() {
             spaceBetween={10}
             navigation={true}
             modules={[FreeMode, Navigation, Thumbs]}
+            thumbs={{ swiper: null }}
             className="swiper-area"
           >
             {["/img/cutlet.webp", "/img/kebab-fresh.webp"].map(
