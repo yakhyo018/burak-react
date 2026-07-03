@@ -16,6 +16,7 @@ export default function Events() {
           slidesPerView={"auto"}
           centeredSlides={true}
           spaceBetween={30}
+          modules={[Autoplay, Navigation, Pagination]}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
