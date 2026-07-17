@@ -1,8 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with VITE
 
 This project was bootstrapped with [Vite](https://vitejs.dev/), using React and TypeScript and the [Redux] and [Redux Toolkit] TS template.
-
-## Getting Started
 
 ## Publishing Rules
 
