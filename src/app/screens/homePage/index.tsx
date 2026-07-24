@@ -28,6 +28,8 @@ export default function HomePage() {
   const { setPopularDishes } = actionDispatch(useDispatch());
   const { popularDishes } = useSelector(popularDishesRetriever);
 
+  console.log(import.meta.env.VITE_APP_API_URL);
+
   useEffect(() => {
     // Backernd serverdan Data qabul qilamiz
     // Backenddan qabul qilgan malumotni slice Storega joylaymiz
