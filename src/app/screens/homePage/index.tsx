@@ -13,26 +13,32 @@ import { createSelector } from "reselect";
 import { setPopularDishes } from "./slice";
 import { retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
+import { ProductCollection } from "../../../lib/enums/product.enum";
+import ProductService from "../../services/ProductServise";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
   setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
 });
-const popularDishesRetriever = createSelector(
-  retrievePopularDishes,
-  (popularDishes) => ({ popularDishes }),
-);
 
 export default function HomePage() {
   // selector: DAta => Store
   const { setPopularDishes } = actionDispatch(useDispatch());
-  const { popularDishes } = useSelector(popularDishesRetriever);
-
-  console.log(import.meta.env.VITE_APP_API_URL);
 
   useEffect(() => {
-    // Backernd serverdan Data qabul qilamiz
-    // Backenddan qabul qilgan malumotni slice Storega joylaymiz
+    // Backend server data fetch => Data
+    const product = new ProductService();
+    product
+      .getProducts({
+        page: 1,
+        limit: 4,
+        order: "productViews",
+        productCollection: ProductCollection.DISH,
+      })
+      .then((data) => {
+        setPopularDishes(data);
+      })
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div className={"homepage"}>
@@ -45,25 +51,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// import React from "react";
-// import Statistics from "./Statistics";
-// import PopularDishes from "./PopularDishes";
-// import NewDishes from "./NewDishes";
-// import Advertisement from "./Advertisement";
-// import ActiveUsers from "./ActiveUsers";
-// import Events from "./Events";
-// import "../../../css/home.css";
-
-// export default function HomePage() {
-//   return (
-//     <div className={"homepage"}>
-//       <Statistics />
-//       <PopularDishes />
-//       <NewDishes />
-//       <Advertisement />
-//       <ActiveUsers />
-//       <Events />
-//     </div>
-//   );
-// }
