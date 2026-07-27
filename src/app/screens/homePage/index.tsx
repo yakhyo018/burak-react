@@ -7,11 +7,9 @@ import PopularDishes from "./PopularDishes";
 import Statistics from "./Statistics";
 import "../../../css/home.css";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
-import { createSelector } from "reselect";
 import { setNewDishes, setPopularDishes, setTopUsers } from "./slice";
-import { retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import ProductService from "../../services/ProductService";

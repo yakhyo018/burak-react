@@ -5,12 +5,30 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Divider from "../../components/divider";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
-import { useParams } from "react-router-dom";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { Dispatch } from "@reduxjs/toolkit";
+import { createSelector } from "@reduxjs/toolkit";
+import { setChosenProduct, setRestaurant } from "./slice";
+import { Product } from "../../../lib/types/product";
+import { retrieveChosenProduct, retrieveRestaurant } from "./selector";
+
+/** REDUX SLICE & SELECTOR **/
+const actionDispatch = (dispatch: Dispatch) => ({
+  setRestaurant: (data: Product[]) => dispatch(setRestaurant(data)),
+  setChosenProduct: (data: Product[]) => dispatch(setChosenProduct(data)),
+});
+const chosenProductRetriever = createSelector(
+  retrieveChosenProduct,
+  (chosenProduct) => ({ chosenProduct }),
+);
+const restaurantRetriever = createSelector(
+  retrieveRestaurant,
+  (restaurant) => ({ restaurant }),
+);
 
 export default function ChosenProduct() {
   return (
