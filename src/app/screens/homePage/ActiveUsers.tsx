@@ -24,8 +24,8 @@ export default function ActiveUsers() {
           <Box className={"category-title"}>Active Users</Box>
           <Stack className={"cards-frame"}>
             <CssVarsProvider>
-              {topUsers.length !== 0 ? (
-                topUsers.map((member: Member) => {
+              {topUsers?.length !== 0 ? (
+                topUsers?.map((member: Member) => {
                   const imagePath = `${serverApi}/${member.memberImage}`;
                   return (
                     <Card
