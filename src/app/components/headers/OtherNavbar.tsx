@@ -5,11 +5,15 @@ import { CartItem } from "../../../lib/types/search";
 
 interface OtherNavbarProps {
   cartItems: CartItem[];
+  onAdd: (item: CartItem) => void;
+  onDelete: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+  onDeleteAll: () => void;
 }
 
 export default function OtherNavbar(props: OtherNavbarProps) {
   const authMember = null;
-  const { cartItems } = props;
+  const { cartItems, onAdd, onDelete, onRemove, onDeleteAll } = props;
 
   return (
     <div className="other-navbar">
@@ -48,7 +52,13 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                 Help
               </NavLink>
             </Box>
-            <Basket cartItems={cartItems} />
+            <Basket
+              cartItems={cartItems}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              onDelete={onDelete}
+              onDeleteAll={onDeleteAll}
+            />
 
             {!authMember ? (
               <Box>
