@@ -27,7 +27,7 @@
     "sweetalert2": "^11.4.23",
     "swiper": "^14.0.1",
     "typescript": "~4.1.5",
-    "universal-cookie": "^8.1.2",
+    "universal-cookie": "^4.0.4",
     "vite": "^8.1.3",
     "web-vitals": "^2.1.4"
   },
