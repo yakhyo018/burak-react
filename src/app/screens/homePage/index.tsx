@@ -24,7 +24,7 @@ const actionDispatch = (dispatch: Dispatch) => ({
 });
 
 export default function HomePage() {
-  // selector: DAta => Store
+  // selector: Data => Store
   const { setPopularDishes, setNewDishes, setTopUsers } =
     actionDispatch(useDispatch());
 
