@@ -13,14 +13,14 @@ const homePageSlice = createSlice({
   reducers: {
     setPopularDishes: (state, action) => {
       // state homepagestateni ichidagi malumot
-      state.popularDishes = action.payload;
+      state.popularDishes = Array.isArray(action.payload) ? action.payload : [];
     },
     setNewDishes: (state, action) => {
       // action useefefectni ichidagi data malumot
-      state.newDishes = action.payload;
+      state.newDishes = Array.isArray(action.payload) ? action.payload : [];
     },
     setTopUsers: (state, action) => {
-      state.topUsers = action.payload;
+      state.topUsers = Array.isArray(action.payload) ? action.payload : [];
     },
   },
 });
